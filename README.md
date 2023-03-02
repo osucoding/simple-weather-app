@@ -21,7 +21,7 @@
 
 * React Frontend
   - Shows weather data for `Columbus, OH, USA` by default
-  - Should have a textfield for a city and a state and a button to send data to the backend
+  - Should have a textfield for a city, state, and country and a button to send data to the backend
   - Displays the new weather data based on the response from the backend
 
 ## Ports
