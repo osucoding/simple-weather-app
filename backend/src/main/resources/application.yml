@@ -1,0 +1,7 @@
+open-weather:
+  apiKey: 10297bf1720cac69c1ca4621b967052d
+  uri: https://api.openweathermap.org/data/2.5/weather
+
+nytimes:
+  apiKey: ct2Am6KgzqW83GH8vLKSv0dKYAYV7lor
+  uri: https://api.nytimes.com/svc/topstories/v2/
