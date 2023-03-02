@@ -28,5 +28,5 @@
 * Frontend: `localhost:3000`
 * Backend: `localhost:8080`
 
-## Example
+## What you'll make (Mock-up)
 ![frontend design](frontend-design.png)
