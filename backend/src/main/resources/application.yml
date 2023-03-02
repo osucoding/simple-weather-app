@@ -1,5 +1,5 @@
 open-weather:
-  apiKey: 10297bf1720cac69c1ca4621b967052d
+  apiKey:
   uri: https://api.openweathermap.org/data/2.5/weather
 
 nytimes:
