@@ -25,7 +25,7 @@ function App() {
     return (
         <div className='App'>
             <header className='App-header'>
-                {newsData.results.map((result, i) => {
+                {newsData ? newsData.results.map((result, i) => {
                     return (
                         <p key={i}>
                             <span>{result.abstract}</span>
@@ -34,7 +34,7 @@ function App() {
                             <br />
                         </p>
                     )
-                })}
+                }) : ''}
             </header>
         </div>
     )
