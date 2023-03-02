@@ -7,10 +7,10 @@ function App() {
     useEffect(() => {
         fetch('http://localhost:8080/api/v0/sample/nyTimes?sectionValue=home', {
             headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json'
+                'Content-Type': 'application/json'
             },
-            method: 'GET'
+            method: 'GET',
+            mode: 'cors'
         })
             .then(function (response) {
                 console.log(response)
