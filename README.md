@@ -27,3 +27,6 @@
 ## Ports
 * Frontend: `localhost:3000`
 * Backend: `localhost:8080`
+
+## Example
+![frontend design](frontend-design.png)
