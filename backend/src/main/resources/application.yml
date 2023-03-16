@@ -1,5 +1,5 @@
 open-weather:
-  apiKey: [ INSERT API KEY HERE ]
+  apiKey: b4beb6c51e962180d49c24d7271f1d6c
   uri: https://api.openweathermap.org/data/2.5/weather
 
 nytimes:
