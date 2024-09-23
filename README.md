@@ -1,11 +1,11 @@
 # simple-weather-app
 
 ## Requirements
-* JDK 17
+* JDK 21
 * IntelliJ (for backend)
 * VSCode (recommended for frontend)
 * Postman
-* Node/npm
+* Node version 18 or newer
 
 ## API
 * https://openweathermap.org/current
@@ -13,16 +13,18 @@
 * Paste the `API Key` in the backend's `application.yml` file
 
 ## Overview
-* Java Spring Boot Backend
+* ![Java Spring Boot Backend](backend/)
   - Receives request from the frontend
   - Sends request to the API
   - Parses the JSON response from the API
   - Sends data back to frontend
 
-* React Frontend
+* ![React Frontend (Vite)](frontend/)
+  - (For first time only) install Vite by executing `npm install vite` command
   - Shows weather data for `Columbus, OH, USA` by default
   - Should have a textfield for a city, state, and country and a button to send data to the backend
   - Displays the new weather data based on the response from the backend
+  - Run the web server by executing `npm run dev` command
 
 ## Ports
 * Frontend: `localhost:3000`
@@ -30,3 +32,8 @@
 
 ## What you'll make (Mock-up)
 ![frontend design](frontend-design.png)
+
+## Changelog
+* Sep 22, 2024:
+  - Changed frontend framework from Create React App to Vite
+  - Changed backend to use JDK 21
