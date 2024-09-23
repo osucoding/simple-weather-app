@@ -37,3 +37,4 @@
 * Sep 22, 2024:
   - Changed frontend framework from Create React App to Vite
   - Changed backend to use JDK 21
+  - Updated backend's module path and it's pom.xml
