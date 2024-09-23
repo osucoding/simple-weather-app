@@ -24,7 +24,7 @@
   - Shows weather data for `Columbus, OH, USA` by default
   - Should have a textfield for a city, state, and country and a button to send data to the backend
   - Displays the new weather data based on the response from the backend
-  - Run the web server by executing `npm run dev` command
+  - Run the web server by executing `npm run dev` command from the directory with `package.json` (in this case, `frontend/` directory)
 
 ## Ports
 * Frontend: `localhost:3000`
