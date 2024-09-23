@@ -10,7 +10,7 @@
 ## API
 * https://openweathermap.org/current
 * Need to make an account and get your `API Key` to access the API
-* Paste the `API Key` in the backend's `application.yml` file
+* Paste the `API Key` in the backend's [`application.yml`](backend/src/main/resources/application.yml) file
 
 ## Overview
 * [Java Spring Boot Backend](backend/)
@@ -35,6 +35,6 @@
 
 ## Changelog
 * Sep 22, 2024:
-  - Changed frontend framework from Create React App to Vite
+  - Changed frontend framework from Create React App to Vite (CRA is no longer supported or updated)
   - Changed backend to use JDK 21
   - Updated backend's module path and it's pom.xml
