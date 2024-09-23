@@ -27,8 +27,8 @@
   - Run the web server by executing `npm run dev` command from the directory with `package.json` (in this case, `frontend/` directory)
 
 ## Ports
-* Frontend: `localhost:3000`
-* Backend: `localhost:8080`
+* Frontend: `3000`
+* Backend: `8080`
 
 ## What you'll make (Mock-up)
 ![frontend design](frontend-design.png)
