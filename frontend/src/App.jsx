@@ -38,6 +38,9 @@ export default function App() {
                     )
                 }) : ''}
             </header>
+            <footer>
+                <a href='https://github.com/osucoding'>osucoding 2024</a>
+            </footer>
         </div>
     )
 }
