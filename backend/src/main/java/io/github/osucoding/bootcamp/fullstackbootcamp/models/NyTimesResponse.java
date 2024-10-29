@@ -1,10 +1,13 @@
 package io.github.osucoding.bootcamp.fullstackbootcamp.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
-
 
 @Getter
 @Setter
@@ -13,10 +16,6 @@ import java.util.List;
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NyTimesResponse {
-    private String copyright;
-    private String lastUpdated;
-    private String section;
+
     private List<ResultsItem> results;
-    private int numResults;
-    private String status;
 }

@@ -38,3 +38,7 @@
   - Changed frontend framework from Create React App to Vite (CRA is no longer supported or updated)
   - Changed backend to use JDK 21
   - Updated backend's module path and it's pom.xml
+* Oct 29, 2024:
+  - Added service to the Java SpringBoot backend
+  - Removed unused/unnecessary fields from the NyTimes payload
+
