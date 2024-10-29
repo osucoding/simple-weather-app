@@ -8,8 +8,9 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResultsItem {
     @JsonProperty(value = "abstract")
+    private String abstractTitle;
 
-    private String shortUrl;
+    private String url;
 
     private String byline;
 }

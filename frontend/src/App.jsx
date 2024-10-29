@@ -4,8 +4,10 @@ import { useState, useEffect } from 'react'
 export default function App() {
     const [newsData, setNewsData] = useState(null)
 
+    const portNumber = 8083 // 8080 for Java/SpringBoot, 8083 for Go/Gin
+
     useEffect(() => {
-        fetch('http://localhost:8080/api/v0/sample/nyTimes?sectionValue=home', {
+        fetch(`http://localhost:${portNumber}/api/v0/ny-times/news?sectionValue=home`, {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -30,7 +32,7 @@ export default function App() {
                         <p key={i}>
                             <span>{result.abstract}</span>
                             <span>{result.byline}</span>
-                            <span>{result.shortUrl}</span>
+                            <span>{result.url}</span>
                             <br />
                         </p>
                     )

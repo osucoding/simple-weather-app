@@ -10,19 +10,19 @@ import (
 func SetupSampleController(engine *gin.Engine) {
 	routerGroup := engine.Group("/api/v0/sample")
 
-	routerGroup.GET("/sayHi", sayHi)
-	routerGroup.GET("/sayMyName", sayMyName)
+	routerGroup.GET("/say-hi", sayHi)
+	routerGroup.GET("/say-my-name", sayMyName)
 }
 
 func sayHi(context *gin.Context) {
-	context.String(http.StatusOK, "hello world")
+	context.JSON(http.StatusOK, "hello world")
 }
 
 func sayMyName(context *gin.Context) {
 	parameterName := context.Query("name")
 	if len(parameterName) == 0 {
-		context.String(http.StatusBadRequest, "You must pass a name parameter")
+		context.JSON(http.StatusBadRequest, "You must pass a name parameter")
 		return
 	}
-	context.String(http.StatusOK, fmt.Sprintf("hello %v!", parameterName))
+	context.JSON(http.StatusOK, fmt.Sprintf("hello %v!", parameterName))
 }
