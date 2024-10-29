@@ -1,16 +1,16 @@
 package io.github.osucoding.bootcamp.fullstackbootcamp.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import io.github.osucoding.bootcamp.fullstackbootcamp.client.SampleClient;
+import io.github.osucoding.bootcamp.fullstackbootcamp.client.NyTimesClient;
 import io.github.osucoding.bootcamp.fullstackbootcamp.models.NyTimesResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class SampleService {
+public class NyTimesService {
 
-    private final SampleClient client;
+    private final NyTimesClient client;
 
     /**
      * The possible section value are: arts, automobiles, books, business, fashion, food,

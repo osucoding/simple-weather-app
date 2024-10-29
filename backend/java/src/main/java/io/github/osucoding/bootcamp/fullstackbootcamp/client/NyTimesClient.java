@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class SampleClient {
+public class NyTimesClient {
 
     @Value("${nytimes.apiKey}")
     private String apiKey;
