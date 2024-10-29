@@ -61,3 +61,4 @@
   - Added Go/Gin backend
   - Made payload field change in Web
   - Made payload field change in the backend
+  - Updated API endpoints to use skewer case instead of camel case
