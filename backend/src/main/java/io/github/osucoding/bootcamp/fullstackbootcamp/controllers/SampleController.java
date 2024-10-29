@@ -1,9 +1,9 @@
 package io.github.osucoding.bootcamp.fullstackbootcamp.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import io.github.osucoding.bootcamp.fullstackbootcamp.client.SampleClient;
 import io.github.osucoding.bootcamp.fullstackbootcamp.models.NyTimesResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.github.osucoding.bootcamp.fullstackbootcamp.services.SampleService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/v0/sample")
+@RequiredArgsConstructor
 public class SampleController {
 
-    @Autowired
-    private SampleClient client;
+    private final SampleService sampleService;
 
     @GetMapping(value = "/sayHi", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getHelloWorld() {
@@ -30,6 +30,6 @@ public class SampleController {
 
     @GetMapping(value = "/nyTimes", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<NyTimesResponse> getWeather(@RequestParam("sectionValue") final String sectionValue) throws JsonProcessingException {
-        return ResponseEntity.ok(client.getNews(sectionValue));
+        return ResponseEntity.ok(sampleService.getNews(sectionValue));
     }
 }
