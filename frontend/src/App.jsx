@@ -1,12 +1,21 @@
 import './App.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+
+const PortOptions = Object.freeze({
+    SPRINGBOOT: 8080, // 8080 for Java/SpringBoot
+    FLASK: 8081, // 8081 for Python/Flask,
+    GIN: 8083 // 8083 for Go/Gin
+})
 
 export default function App() {
     const [newsData, setNewsData] = useState(null)
 
-    const portNumber = 8081 // 8080 for Java/SpringBoot, 8081 for Python/Flask, 8083 for Go/Gin
+    const portNumber = undefined // set to one of PortOptions.SPRINGBOOT, PortOptions.FLASK, etc
 
     useEffect(() => {
+        if (portNumber === undefined) {
+            return
+        }
         fetch(`http://localhost:${portNumber}/api/v0/ny-times/news?sectionValue=home`, {
             headers: {
                 'Content-Type': 'application/json'
@@ -22,21 +31,33 @@ export default function App() {
                 console.log(json)
                 setNewsData(json)
             })
-    }, [])
+    }, [portNumber])
+
+    const body = useCallback(() => {
+        if (portNumber === undefined) {
+            return <h1>You need to configure <i>portNumber</i> in App.jsx</h1>
+        }
+        if (!newsData) {
+            return <></>
+        }
+        return (
+            newsData.results.map((result, i) => {
+                return (
+                    <p key={i}>
+                        <span>{result.abstract}</span>
+                        <span>{result.byline}</span>
+                        <span>{result.url}</span>
+                        <br />
+                    </p>
+                )
+            })
+        )
+    }, [newsData, portNumber])
 
     return (
         <div className='App'>
             <header className='App-header'>
-                {newsData ? newsData.results.map((result, i) => {
-                    return (
-                        <p key={i}>
-                            <span>{result.abstract}</span>
-                            <span>{result.byline}</span>
-                            <span>{result.url}</span>
-                            <br />
-                        </p>
-                    )
-                }) : ''}
+                {body()}
             </header>
             <footer>
                 <a href='https://github.com/osucoding'>osucoding 2024</a>
