@@ -1,9 +1,12 @@
 from flask import Flask
+from flask_cors import CORS
 
 from controller.sample_controller import blueprint as sample_blueprint
 from controller.nytimes_controller import blueprint as nytimes_blueprint
 
 app = Flask(__name__)
+# disable CORS
+CORS(app)
 
 def setup_flask():
     # register sample_controller
