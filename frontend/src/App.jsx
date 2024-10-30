@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 export default function App() {
     const [newsData, setNewsData] = useState(null)
 
-    const portNumber = 8081 // 8080 for Java/SpringBoot, 8081 for Python/Flas, 8083 for Go/Gin
+    const portNumber = 8081 // 8080 for Java/SpringBoot, 8081 for Python/Flask, 8083 for Go/Gin
 
     useEffect(() => {
         fetch(`http://localhost:${portNumber}/api/v0/ny-times/news?sectionValue=home`, {
