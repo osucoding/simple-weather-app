@@ -11,6 +11,7 @@
   - SpringBoot: [backend/java/src/main/resources/application.yml](backend/java/src/main/resources/application.yml)
   - Flask: [backend/python/resources/application.yml](backend/python/resources/application.yml)
   - Go/Gin: [backend/go/resources/application.yml](backend/go/resources/application.yml)
+  - Swift/Vapor: [backend/swift/.env](backend/swift/.env)
 
 ## Overview
 
@@ -36,12 +37,26 @@
   - Run `go run .` command to run the program in the dev mode
   - Port 8083
 
+* [Swift Vapor Backend](backend/swift)
+  - Swift 6 or later
+  - Running with CLI (macOS or Linux):
+      * For first time setup only, install `vapor`
+      * To build the project, run the command: `swift build`
+      * To start the server, run the command: `swift run App`
+      * https://docs.vapor.codes/install/linux/
+  - Running with Xcode (macOS only):
+      * For first time setup only, go to `Edit Scheme` setting. Then, go to the `Options` tab and ensure `Working Directory` is set to the actual Swift project location, not DerivedData.
+      * Simply click on the Run button in Xcode, or `CMD + R`
+      * https://docs.vapor.codes/install/macos/
+  - Port 8084
+
 ### Frontend
 * [React Frontend (Vite)](frontend/)
   - node18 or later
   - (For first time only) install Vite by executing `npm install vite` command
   - Run the web server by executing `npm run dev` command from the directory with `package.json` (in this case, `frontend/` directory)
   - `App.jsx` configured to simply display the NY Times data from the backend
+  - You'll need to specify the backend package at `App.jsx:14`
 
 ## Ports
 * Frontend: `3000`
@@ -49,6 +64,7 @@
   - Java/SpringBoot: `8080`
   - Python/Flask: `8081`
   - Go/Gin: `8083`
+  - Swift/Vapor: `8084`
 
 ## What you'll make (Mock-up)
 ![frontend design](frontend-design.png)
@@ -70,3 +86,5 @@
   - Updated API endpoints to use skewer case instead of camel case
 * Oct 30th, 2024:
   - Added Flask version of the backend
+* Mar 17th, 2025:
+  - Added Swift/Vapor version of the backend

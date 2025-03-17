@@ -4,13 +4,14 @@ import { useState, useEffect, useCallback } from 'react'
 const PortOptions = Object.freeze({
     SPRINGBOOT: 8080, // 8080 for Java/SpringBoot
     FLASK: 8081, // 8081 for Python/Flask,
-    GIN: 8083 // 8083 for Go/Gin
+    GIN: 8083, // 8083 for Go/Gin
+    SWIFT: 8084 // 8084 for Swift/Vapor
 })
 
 export default function App() {
     const [newsData, setNewsData] = useState(null)
 
-    const portNumber = undefined // set to one of PortOptions.SPRINGBOOT, PortOptions.FLASK, etc
+    const portNumber = undefined // TODO: set to one of PortOptions.SPRINGBOOT, PortOptions.FLASK, etc
 
     useEffect(() => {
         if (portNumber === undefined) {
@@ -35,7 +36,7 @@ export default function App() {
 
     const body = useCallback(() => {
         if (portNumber === undefined) {
-            return <h1>You need to configure <i>portNumber</i> in App.jsx</h1>
+            return <h1>You need to configure <i>portNumber</i> in App.jsx:14</h1>
         }
         if (!newsData) {
             return <></>
