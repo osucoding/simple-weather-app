@@ -45,6 +45,7 @@
       * To start the server, run the command: `swift run App`
       * https://docs.vapor.codes/install/linux/
   - Running with Xcode (macOS only):
+      * For first time setup only, go to `Edit Scheme` setting. Then, go to the `Options` tab and ensure `Working Directory` is set to the actual Swift project location, not DerivedData.
       * Simply click on the Run button in Xcode, or `CMD + R`
       * https://docs.vapor.codes/install/macos/
   - Port 8084
