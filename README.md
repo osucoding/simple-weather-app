@@ -8,15 +8,16 @@
 * https://openweathermap.org/current
 * Need to make an account and get your `API Key` to access the API
 * Paste the `API Key` in the backend's resources directory.
-  - SpringBoot: [backend/java/src/main/resources/application.yml](backend/java/src/main/resources/application.yml)
+  - Traditional SpringBoot: [backend/java/traditional/src/main/resources/application.yml](backend/java/traditional/src/main/resources/application.yml)
   - Flask: [backend/python/resources/application.yml](backend/python/resources/application.yml)
   - Go/Gin: [backend/go/resources/application.yml](backend/go/resources/application.yml)
   - Swift/Vapor: [backend/swift/.env](backend/swift/.env)
+  - Reactive SpringBoot: [backend/java/reactive/src/main/resources/application.yml](backend/java/reactive/src/main/resources/application.yml)
 
 ## Overview
 
 ### Backend
-* [Java SpringBoot Backend](backend/java)
+* [Java SpringBoot Backend (Traditional)](backend/java/traditional/)
   - JDK 21
   - IntelliJ
   - Port 8080
@@ -50,21 +51,27 @@
       * https://docs.vapor.codes/install/macos/
   - Port 8084
 
+* [Java SpringBoot Backend (Reactive)](backend/java/reactive/)
+  - JDK 21
+  - IntelliJ
+  - Port 8085
+
 ### Frontend
 * [React Frontend (Vite)](frontend/)
   - node18 or later
   - (For first time only) install Vite by executing `npm install vite` command
   - Run the web server by executing `npm run dev` command from the directory with `package.json` (in this case, `frontend/` directory)
   - `App.jsx` configured to simply display the NY Times data from the backend
-  - You'll need to specify the backend package at `App.jsx:14`
+  - You'll need to specify the backend package at `App.jsx:18`
 
 ## Ports
 * Frontend: `3000`
 * Backend:
-  - Java/SpringBoot: `8080`
+  - Traditional Java/SpringBoot: `8080`
   - Python/Flask: `8081`
   - Go/Gin: `8083`
   - Swift/Vapor: `8084`
+  - Reactive Java/SpringBoot: `8085`
 
 ## What you'll make (Mock-up)
 ![frontend design](frontend-design.png)
@@ -88,3 +95,6 @@
   - Added Flask version of the backend
 * Mar 17th, 2025:
   - Added Swift/Vapor version of the backend
+* July 3rd, 2025:
+  - Added Reactive SpringBoot backend
+  - Updated frontend port config to include the new port
