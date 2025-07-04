@@ -2,11 +2,15 @@ import './App.css'
 import { useState, useEffect, useCallback } from 'react'
 
 const PortOptions = Object.freeze({
-    SPRINGBOOT: 8080, // 8080 for Java/SpringBoot
+    SPRINGBOOT: 8080, // 8080 for Traditional Java/SpringBoot
     FLASK: 8081, // 8081 for Python/Flask,
     GIN: 8083, // 8083 for Go/Gin
-    SWIFT: 8084 // 8084 for Swift/Vapor
+    SWIFT: 8084, // 8084 for Swift/Vapor
+    SPRINGBOOT_REACTIVE: 8085, // 8085 for Reactive Java/SpringBoot
 })
+
+// NOTE: Make sure to update this line number if you change the port number above
+const portConfigLineNumber = 18
 
 export default function App() {
     const [newsData, setNewsData] = useState(null)
@@ -36,7 +40,7 @@ export default function App() {
 
     const body = useCallback(() => {
         if (portNumber === undefined) {
-            return <h1>You need to configure <i>portNumber</i> in App.jsx:14</h1>
+            return <h1>You need to configure <i>portNumber</i> in App.jsx:{portConfigLineNumber}</h1>
         }
         if (!newsData) {
             return <></>
@@ -55,13 +59,15 @@ export default function App() {
         )
     }, [newsData, portNumber])
 
+    const currentYear = new Date().getFullYear()
+
     return (
         <div className='App'>
             <header className='App-header'>
                 {body()}
             </header>
             <footer>
-                <a href='https://github.com/osucoding'>osucoding 2024</a>
+                <a href='https://github.com/osucoding'>osucoding {currentYear}</a>
             </footer>
         </div>
     )
